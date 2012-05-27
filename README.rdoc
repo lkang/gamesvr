@@ -1,0 +1,29 @@
+This is a basic games server. 
+
+Entities: 
+  user - 
+    fb login
+    identity for gameplay
+    score
+    list of users
+    
+  game - a contest
+    takes n users - who are then players. 
+    high scoring players
+    list of games in progress
+    list of finished games
+    list of games started, waiting for players
+  
+  room - container for the game and players
+    list of rooms
+    rules per room, like table limits, number of players
+    contains a game
+    
+  lobby - 
+    list games
+    list players
+    
+    
+  turn - given to one of the game players
+  
+    

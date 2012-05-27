@@ -1,0 +1,70 @@
+body {
+  
+  .container {
+    .header {
+      .logo {
+      }
+      .loggedin {
+        font-size: .75em
+      }
+    }
+    .main_content {
+      .sidebar_left {
+        float: left;
+        width: 30%;
+/*        max-width: 200px;*/
+/*        display: inline;*/
+        .header {
+        }
+        .scrollable {
+        }
+      }
+      
+      .sidebar_right {
+        float: right;
+        width: 20%;
+/*        max-width: 200px;*/
+/*        display: inline;*/
+        .header {
+        }
+        .scrollable {
+        }
+      }            
+      .content {
+        float: right;
+        max-width: 40%;
+        min-width: 30%;
+/*        max-width: 200px;*/
+/*        display: inline;*/
+        .header {
+        }
+        .scrollable {
+        }
+      }
+      .footer {
+        clear: both;
+      }
+    }
+  }
+  
+}
+
+.scrollable {
+}
+
+//debug
+div {
+/*  border-width: 1px;
+  border-color: red;
+  border-style: solid;*/
+  padding: 2px;
+  margin:3px;
+  min-width: 2px;
+  min-height: 2px;
+  border: {
+    width: 1px;
+    style: dotted;
+    color: red;
+    opacity: 10%; //no
+  }
+}

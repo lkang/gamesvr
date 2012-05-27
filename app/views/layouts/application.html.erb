@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gamesvr</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "lib" %>
+  <%= javascript_include_tag "app" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <%= yield %>
+    
+    <!-- start the javascript ui -->
+    <script type='text/javascript'>
+      $(function() {
+        alert("starting the main app...")
+        window.gameServer = new window.gamesvr.Home()
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<div class='container'>
+  <div class='header'>
+    <div class='logo'>
+    </div>
+    <div class='loggedin'>
+      <%if @user%>
+        <p>logged in as <%=@user.email%> | <%=link_to('logout', destroy_user_session_url, :method=>:delete)%></p>
+      <%elsif @session_user %>
+        <p>logged in as <%=@session_user%> | <%=link_to('logout', fb_login_url, :method=>:delete)%></p>
+      <% else %>
+        <p><%=link_to('login', new_user_session_url)%> | <%= link_to 'facebook login', new_fb_login_url %></p>
+      <%end%>
+    </div>
+    <h2> This is the homepage! </h2>
+  </div>
+
+  <div class='main_content'>
+    main content
+    <div class='sidebar_left'>
+      sidebar
+      <div class='header'>
+        header
+      </div>
+      <div class='scrollable'>
+        scrollable
+      </div>
+    </div>
+    
+    <div class='sidebar_right'>
+      sidebar
+      <div class='header'>
+        header
+      </div>
+      <div class='scrollable'>
+        scrollable
+      </div>
+    </div>
+    
+    <div class='content'>
+      content
+      <div class='header'>
+        header
+      </div>
+      
+      <div class='alerts'>
+        alerts
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+      
+      <div class='scrollable'>
+        scrollable
+      </div>
+
+    </div>
+    
+    <div class='footer'>
+      footer
+    </div>
+
+  </div>
+  the container
+</div>
+<%= render :partial => 'home/templates/user_listing' %>
