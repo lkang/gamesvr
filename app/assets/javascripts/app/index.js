@@ -13,4 +13,5 @@
 //= require ./gamesvr
 //= require ./TestClass
 //= require ./Users
+//= require ./Games
 //= require ./Home

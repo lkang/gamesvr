@@ -4,15 +4,24 @@ Entities:
   user - 
     fb login
     identity for gameplay
-    score
     list of users
     
+  game_type
+    a type of game - battleship, asteroids, doom, etc
+  
   game - a contest
     takes n users - who are then players. 
-    high scoring players
+    state - waiting, in progress, finished
     list of games in progress
     list of finished games
     list of games started, waiting for players
+        
+  player
+    association btwn game and user
+    score
+    high scoring players (per game)
+    
+  
   
   room - container for the game and players
     list of rooms

@@ -11,6 +11,7 @@ Gamesvr::Application.routes.draw do
   
   namespace :api do
     match 'users' => 'users#index'
+    match 'games' => 'games#index'
   end
   
   # The priority is based upon order of creation:

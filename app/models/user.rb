@@ -8,8 +8,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   
+  has_many :players
+  
   def to_hash
     {
+      :id => id,
       :email => email,
       :sign_in_count => sign_in_count,
       :last_sign_in_at => last_sign_in_at,
