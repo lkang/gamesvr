@@ -10,8 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require ./jquery/development-bundle/jquery-1.7.2 
-//= require ./jquery/development-bundle/ui/jquery-ui-1.8.20.custom
+//= require ./jquery/jquery-1.7.2 
+//= require ./jquery/jquery-ui-1.8.18
 //= require ./class
 //= require ./underscore
 //= require ./backbone
