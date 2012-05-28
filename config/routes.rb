@@ -8,6 +8,11 @@ Gamesvr::Application.routes.draw do
       get 'post_oauth'
     end
   end
+  
+  namespace :api do
+    match 'users' => 'users#index'
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

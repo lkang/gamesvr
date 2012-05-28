@@ -7,4 +7,13 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  
+  def to_hash
+    {
+      :email => email,
+      :sign_in_count => sign_in_count,
+      :last_sign_in_at => last_sign_in_at,
+      :current_sign_in_at => current_sign_in_at
+    }
+  end
 end

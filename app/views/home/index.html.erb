@@ -4,29 +4,19 @@
     </div>
     <div class='loggedin'>
       <%if @user%>
-        <p>logged in as <%=@user.email%> | <%=link_to('logout', destroy_user_session_url, :method=>:delete)%></p>
+        <p>logged in as <%=@user.email%> | <%=link_to('logout', destroy_user_session_path, :method=>:delete)%></p>
       <%elsif @session_user %>
-        <p>logged in as <%=@session_user%> | <%=link_to('logout', fb_login_url, :method=>:delete)%></p>
+        <p>logged in as <%=@session_user%> | <%=link_to('logout', fb_login_path, :method=>:delete)%></p>
       <% else %>
-        <p><%=link_to('login', new_user_session_url)%> | <%= link_to 'facebook login', new_fb_login_url %></p>
+      <!-- <p><%=link_to('login', new_user_session_url)%> | <%= link_to 'facebook login', new_fb_login_url %></p> -->
+      <p><%=link_to('login', new_user_session_url)%> | <%= link_to "Login with Facebook", fb_login_url, :method => :post %></p>
       <%end%>
     </div>
     <h2> This is the homepage! </h2>
   </div>
 
   <div class='main_content'>
-    main content
     <div class='sidebar_left'>
-      sidebar
-      <div class='header'>
-        header
-      </div>
-      <div class='scrollable'>
-        scrollable
-      </div>
-    </div>
-    
-    <div class='sidebar_right'>
       sidebar
       <div class='header'>
         header
@@ -51,7 +41,16 @@
       <div class='scrollable'>
         scrollable
       </div>
-
+    </div>
+    
+    <div class='sidebar_right'>
+      sidebar
+      <div class='header'>
+        header
+      </div>
+      <div class='scrollable'>
+        scrollable
+      </div>
     </div>
     
     <div class='footer'>

@@ -20,7 +20,7 @@ class FbLoginsController < ApplicationController
   def create
     opt = {
       :client_id => "321049907930764",
-      :scope => "publish_actions",
+      :scope => "publish_actions,email",
       :redirect_uri => post_oauth_fb_login_url,
       :state => "12345"
     }
@@ -57,9 +57,19 @@ class FbLoginsController < ApplicationController
     rsp = FbClient.get( 'https://graph.facebook.com/me', auth_opt )
     puts "****** rsp: #{rsp.inspect}"
     rsp_hash = rsp.parsed_response
-    session[:username] = rsp_hash["username"]
-    session[:name]     = rsp_hash["name"]
-    session[:fb_id]    = rsp_hash["id"]
+    if user = User.find_by_email( rsp_hash["email"] )
+      sign_in user
+    else
+      user = User.new( :email => rsp_hash["email"], :password => 'minimum' )
+      user.save
+      sign_in user
+    end
+    #   session[:email]    = rsp_hash["email"]
+    #   session[:username] = rsp_hash["username"]
+    #   session[:name]     = rsp_hash["name"]
+    #   session[:fb_id]    = rsp_hash["id"]
+    # end
+      
     redirect_to root_path   
   end
   

@@ -12,6 +12,7 @@
 //
 //= require ./jquery/jquery-1.7.2 
 //= require ./jquery/jquery-ui-1.8.18
+//= require jquery_ujs
 //= require ./class
 //= require ./underscore
 //= require ./backbone
