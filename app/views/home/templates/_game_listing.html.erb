@@ -1,5 +1,8 @@
 <script type='text/template', id='game_template'>
   <div class='game_listing', id='user_<%%= id %>'>
-    <%%= name %> <%%= num_players %>
+    <%%= name %>
+    <span class='state'>
+      <%%= num_players %> players <%%= state %>
+    </span>
   </div>
 </script>

@@ -1,5 +1,4 @@
 body {
-  
   .container {
     .header {
       .logo {
@@ -12,8 +11,6 @@ body {
       .sidebar_left {
         float: left;
         width: 30%;
-/*        max-width: 200px;*/
-/*        display: inline;*/
         .header {
         }
         .scrollable {
@@ -23,8 +20,6 @@ body {
         float: left;
         max-width: 50%;
         min-width: 44%;
-/*        max-width: 200px;*/
-/*        display: inline;*/
         .header {
         }
         .scrollable {
@@ -33,8 +28,6 @@ body {
       .sidebar_right {
         float: left;
         width: 20%;
-/*        max-width: 200px;*/
-/*        display: inline;*/
         .header {
         }
         .scrollable {
@@ -45,7 +38,6 @@ body {
       }
     }
   }
-  
 }
 
 .scrollable {
@@ -53,9 +45,6 @@ body {
 
 //debug
 div {
-/*  border-width: 1px;
-  border-color: red;
-  border-style: solid;*/
   padding: 2px;
   margin:3px;
   min-width: 2px;
@@ -64,6 +53,13 @@ div {
     width: 1px;
     style: dotted;
     color: red;
-    opacity: 10%; //no
+  }
+}
+
+span {
+  border: {
+    width: 1px;
+    style: dotted;
+    color: red;
   }
 }

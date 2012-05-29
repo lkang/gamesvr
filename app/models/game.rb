@@ -6,25 +6,26 @@ class Game < ActiveRecord::Base
   
   has_many :players
   
-  STATE = [:waiting, :in_progress, :finished]
+  STATE = { 
+    :waiting     => 1,
+    :playing     => 2,
+    :finished    => 3
+  }
   
-  def initialize
-    super
-    self.state = :waiting
+  def initialize(*args)
+    super(*args)
+    self.state = STATE[:waiting]
   end
   
   def start
-    self.state = :in_progress
+    self.state = STATE[:playing]
   end
   
   def finish
-    self.state = :finished
+    self.state = STATE[:finished]
   end
   
   def add_player( user )
-    # p = Player.new
-    # p.game = self
-    # p.user = user
     p = Player.new( :user => user, :game => self )
     p.save!
   end
@@ -34,7 +35,7 @@ class Game < ActiveRecord::Base
       :id => id,
       :name => name,
       :created_at => created_at,
-      :state => state.to_s,
+      :state => STATE.key(state).to_s,
       :num_players => players.count
     }
   end
